@@ -2,6 +2,7 @@ package receiptFormatting
 
 import (
 	"encoding/json"
+	"strconv"
 	"strings"
 )
 
@@ -63,7 +64,12 @@ func PadRight(str, pad string, lenght int) string {
 	}
 }
 
-func ConverToMap(v interface{}) (m map[string]interface{}) {
+func ConvertToInt(s string) int {
+	num, _ := strconv.Atoi(s)
+	return num
+}
+
+func ConvertToMap(v interface{}) (m map[string]interface{}) {
 	js, _ := json.Marshal(v)
 	_ = json.Unmarshal(js, &m)
 	return m
