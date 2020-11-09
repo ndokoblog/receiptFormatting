@@ -7,6 +7,7 @@ import (
 )
 
 func NumFormat(s string) string {
+	s = strings.TrimSuffix(s, ".00")
 	v := len(s)
 	if v <= 3 {
 		return s
