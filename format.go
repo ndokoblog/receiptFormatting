@@ -78,5 +78,6 @@ func ConvertToMap(v interface{}) (m map[string]interface{}) {
 
 func Stringify(v interface{}) string {
 	js, _ := json.Marshal(v)
-	return string(js)
+	s := strings.ReplaceAll(string(js), `\`, ``)
+	return s
 }
