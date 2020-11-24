@@ -8,6 +8,10 @@ import (
 
 func NumFormat(s string) string {
 	s = strings.TrimSuffix(s, ".00")
+	s = strings.TrimLeft(s, "0")
+	if s == "" {
+		s = "0"
+	}
 	v := len(s)
 	if v <= 3 {
 		return s
