@@ -69,6 +69,19 @@ func PadRight(str, pad string, lenght int) string {
 	}
 }
 
+func LocalMonth(s string, long bool) string {
+	if long {
+		if v, ok := localMonthLong[s]; ok {
+			return v
+		}
+	} else {
+		if v, ok := localMonthShort[s]; ok {
+			return v
+		}
+	}
+	return ""
+}
+
 func ConvertToInt(s string) int {
 	num, _ := strconv.Atoi(s)
 	return num
