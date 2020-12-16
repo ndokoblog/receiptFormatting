@@ -83,8 +83,8 @@ func LocalMonth(s string, long bool) string {
 }
 
 func ConvertToInt(s string) int {
-	num, _ := strconv.Atoi(s)
-	return num
+	f, _ := strconv.ParseFloat(s, 64)
+	return int(f)
 }
 
 func ConvertToMap(v interface{}) (m map[string]interface{}) {
