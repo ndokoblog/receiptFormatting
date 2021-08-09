@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"strconv"
 	"strings"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
 func NumFormat(s string) string {
@@ -96,5 +98,10 @@ func ConvertToMap(v interface{}) (m map[string]interface{}) {
 func Stringify(v interface{}) string {
 	js, _ := json.Marshal(v)
 	s := strings.ReplaceAll(string(js), `\`, ``)
+	return s
+}
+
+func Stringify2(v interface{}) string {
+	s, _ := jsoniter.MarshalToString(v)
 	return s
 }
